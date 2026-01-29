@@ -25,7 +25,6 @@ The implementation is written in **JavaScript (ES2022)** using:
 - Private class fields  
 - Immutable domain objects  
 - Dependency injection  
-- Unit tests (Jest)
 
 ---
 
@@ -66,8 +65,6 @@ src/
     SeatReservationService.js
   TicketService.js          # Main implementation
 
-test/
-  TicketService.test.js     # Jest unit tests
 ```
 
 ### Key Design Choices
@@ -86,14 +83,6 @@ This project includes a full Jest test suite that validates all business rules a
 ```bash
 npm install
 ```
-
-### Run the test suite
-```bash
-npm test
-```
-
-All tests are located in `test/TicketService.test.js`.
-
 ---
 
 ## ▶️ Running the Application (Two Options)
@@ -210,6 +199,9 @@ GitHub Actions to run tests on every push.
 - Seat selection  
 - Event selection  
 - Price breakdown animations  
+
+### **8. Add Unit Test**
+- Unit tests (Jest)
 
 ---
 
