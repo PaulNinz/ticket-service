@@ -80,6 +80,7 @@ test/
 ---
 
 ## 🧪 Running Tests
+This project includes a full Jest test suite that validates all business rules and service interactions.
 
 ### Install dependencies
 ```bash
@@ -92,6 +93,53 @@ npm test
 ```
 
 All tests are located in `test/TicketService.test.js`.
+
+---
+
+## ▶️ Running the Application (Two Options)
+
+You can run the TicketService in two different ways depending on what you want to test:  
+**(1) Command‑line execution** or **(2) API + Browser UI**.
+
+---
+
+## **Option 1 — Run via Command Line (`run.js`)**
+
+This mode executes the TicketService directly using predefined inputs.
+
+### Run the script:
+```bash
+node run.js
+```
+
+This is useful for quickly verifying backend logic without using the UI.
+
+---
+
+## **Option 2 — Run the API + Browser Interface (`api.js`)**
+
+The project also exposes a simple HTTP API and a browser‑based UI for interacting with the TicketService visually.
+
+### Start the API server:
+```bash
+node api.js
+```
+
+### Then open the UI in your browser:
+```
+http://localhost:3000
+```
+
+From here you can:
+
+- Enter account ID  
+- Select ticket quantities  
+- View the summary  
+- Submit a purchase  
+- See validation errors  
+- View the success screen  
+
+This provides a complete end‑to‑end demonstration of the TicketService.
 
 ---
 
