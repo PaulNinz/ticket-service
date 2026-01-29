@@ -40,7 +40,7 @@ The implementation is written in **JavaScript (ES2022)** using:
 - Payment always succeeds  
 - Seat reservation always succeeds  
 
-### ✔ External Services (Provided)
+### ✔ Services (Provided)
 - `TicketPaymentService`  
 - `SeatReservationService`  
 
