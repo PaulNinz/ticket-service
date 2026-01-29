@@ -179,18 +179,118 @@ The following will throw `InvalidPurchaseError`:
 
 ---
 
-## ✔️ What This Implementation Demonstrates
+# 🧠 **Design Decisions **
 
-- Clean, maintainable code  
-- Strong domain modelling  
-- Correct enforcement of business rules  
-- Proper error handling  
-- Test‑driven approach  
-- Clear separation of concerns  
-- Immutable data structures  
-- Realistic service integration  
+## **Design Decisions**
+
+### **1. Strong Domain Modelling**
+`TicketTypeRequest` is an immutable value object.  
+This ensures:
+
+- No accidental mutation  
+- Validation happens at construction time  
+- Business logic receives only valid domain data  
+
+This mirrors real enterprise DDD (Domain‑Driven Design) patterns.
 
 ---
+
+### **2. Dependency Injection**
+`TicketService` receives its dependencies (`TicketPaymentService`, `SeatReservationService`) via constructor injection.
+
+Benefits:
+
+- Easy to mock in tests  
+- No hard‑coded dependencies  
+- Clear separation of concerns  
+- Matches real‑world service architecture  
+
+---
+
+### **3. Encapsulation with Private Fields**
+All internal logic is hidden using `#private` methods.
+
+Benefits:
+
+- Prevents misuse  
+- Keeps the public API clean  
+- Ensures business rules cannot be bypassed  
+
+---
+
+### **4. Fail‑Fast Validation**
+Invalid requests throw `InvalidPurchaseError` immediately.
+
+Benefits:
+
+- No partial processing  
+- Clear error semantics  
+- Predictable behaviour  
+
+---
+
+### **5. Pure Calculation Methods**
+Seat and payment calculations are isolated and deterministic.
+
+Benefits:
+
+- Easy to test  
+- Easy to reason about  
+- No side effects  
+
+---
+
+### **6. Separation of Layers**
+- **Domain** (TicketTypeRequest)  
+- **Service** (TicketService)  
+- **Infrastructure** (third‑party services)  
+- **API** (Express server)  
+- **UI** (HTML wizard)  
+
+---
+
+# 🚀 **Future Improvements **
+
+## **Future Improvements**
+
+### **1. Add TypeScript**
+Would provide stronger type safety and clearer contracts.
+
+### **2. Add Logging & Monitoring**
+Integrate Winston or pino for structured logs.
+
+### **3. Add More API Endpoints**
+Examples:
+
+- `/health`  
+- `/pricing`  
+- `/events/:id/tickets`  
+
+### **4. Add Rate Limiting**
+Prevent abuse of the purchase endpoint.
+
+### **5. Add Authentication**
+Require login before purchasing tickets.
+
+### **6. Add Real Payment Gateway Integration**
+Stripe, Adyen, or Braintree.
+
+### **7. Add Real Seat Allocation Logic**
+Integrate with a real seat map or event inventory system.
+
+### **8. Add CI/CD Pipeline**
+GitHub Actions to run tests on every push.
+
+### **9. Add Swagger/OpenAPI Documentation**
+Auto‑generated API docs.
+
+### **10. Add More UI Features**
+- Seat selection  
+- Event selection  
+- Price breakdown animations  
+
+---
+
 
 ## 📄 License
 This project is provided as part of a coding exercise.
