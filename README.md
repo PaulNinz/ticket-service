@@ -1,7 +1,3 @@
-# ticket-service
-Implementation of Ticket Service 
-
-
 # 🎟️ Ticket Service – Coding Exercise
 
 A clean, fully tested implementation of the **TicketService** as described in the coding exercise brief.  
@@ -47,8 +43,6 @@ The implementation is written in **JavaScript (ES2022)** using:
 ### ✔ External Services (Provided)
 - `TicketPaymentService`  
 - `SeatReservationService`  
-
-These are treated as unmodifiable third‑party dependencies.
 
 ---
 
@@ -128,31 +122,6 @@ From here you can:
 - See validation errors  
 - View the success screen  
 
-This provides a complete end‑to‑end demonstration of the TicketService.
-
----
-
-## ▶️ Usage Example
-
-```js
-import { TicketService } from './src/TicketService.js';
-import { TicketTypeRequest, TicketType } from './src/domain/TicketTypeRequest.js';
-import { TicketPaymentService } from './src/thirdparty/TicketPaymentService.js';
-import { SeatReservationService } from './src/thirdparty/SeatReservationService.js';
-
-const paymentService = new TicketPaymentService();
-const seatService = new SeatReservationService();
-
-const service = new TicketService(paymentService, seatService);
-
-service.purchaseTickets(
-  1,
-  new TicketTypeRequest(TicketType.ADULT, 2),
-  new TicketTypeRequest(TicketType.CHILD, 1),
-  new TicketTypeRequest(TicketType.INFANT, 1)
-);
-```
-
 ---
 
 ## 🚫 Invalid Requests (Examples)
@@ -187,7 +156,6 @@ Examples:
 Require login before purchasing tickets.
 
 ### **4. Add Real Payment Gateway Integration**
-Stripe, Adyen, or Braintree.
 
 ### **5. Add Real Seat Allocation Logic**
 Integrate with a real seat map or event inventory system.
